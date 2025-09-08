@@ -1,0 +1,126 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 50px;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex; 
+    flex-direction: column;
+    gap: 50px; 
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 50px; 
+}
+
+.text-content {
+    max-width: 500px;
+}
+
+.text-content h1 {
+    font-size: 3em;
+    font-weight: bold;
+    line-height: 1.1;
+    margin: 0 0 20px 0;
+}
+
+.text-content p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.explore-button {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* Nuevo estilo para el contenedor de imágenes con solapamiento */
+.image-overlap-container {
+    position: relative; 
+    width: 500px; 
+    height: 300px; 
+}
+
+.image-overlap-container .image-placeholder {
+    width: 280px; 
+    height: 280px; 
+    background-color: #ddd; 
+    border-radius: 10px;
+    position: absolute; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.image-overlap-container .image-top {
+    top: 0;
+    left: 0;
+    z-index: 2; /* Para que esta imagen esté por encima */
+}
+
+.image-overlap-container .image-bottom {
+    bottom: 0;
+    right: 0;
+    z-index: 1; 
+}
+
+/* Sección inferior como un solo contenedor */
+.bottom-section-wrapper {
+    background-color: #262626;
+    border-radius: 15px;
+    padding: 30px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-section {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around; 
+    width: 100%;
+}
+
+.card {
+   
+    flex: 1; 
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff; 
+}
+
+.card h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #aaa;
+}
+
+.card .icon {
+    font-size: 2em;
+    color: #aaa;
+    margin-bottom: 10px;
+}

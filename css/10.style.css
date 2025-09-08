@@ -1,0 +1,93 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: #262626;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 100px auto; 
+    padding: 0 50px;
+}
+
+.text-section {
+    max-width: 400px;
+    margin-right: 50px;
+}
+
+.text-section h1 {
+    font-size: 3em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.text-section .design {
+    color: #ffb8b2; 
+}
+
+.text-section .create {
+    color: #92b9b5; 
+}
+
+.text-section .inspire {
+    color: #4dc2c2; 
+}
+
+.text-section p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #ccc;
+    margin-top: 20px;
+}
+
+/* Estilo del botón "Explore" */
+.explore-button {
+    background-color: #f0f0f0;
+    color: #262626;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.explore-button:hover {
+    background-color: #fff;
+}
+
+/* Contenedor principal para la cuadrícula de imágenes */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(4, 1fr); 
+    gap: 15px; 
+    width: 600px; 
+    aspect-ratio: 1 / 1; 
+}
+
+/* Estilo para cada cuadrado de la cuadrícula */
+.grid-item {
+    border-radius: 20px;
+    overflow: hidden; 
+    position: relative; 
+}
+
+/* Estilo para las imágenes dentro de cada cuadrado */
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block; 
+}

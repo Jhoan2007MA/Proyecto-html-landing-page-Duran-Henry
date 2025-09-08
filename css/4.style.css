@@ -1,0 +1,97 @@
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --text: #222;
+  --muted: #555;
+  --btn-bg: #111;
+  --radius: 10px;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.6;
+}
+
+/* Layout general con GRID */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* Imagen a la izquierda */
+.image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Columna de contenido a la derecha */
+.content-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 4rem 3rem;
+  max-width: 550px;
+}
+
+.content-side h1 {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 700;
+}
+
+.content-side p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* Botón */
+.btn {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.75rem 1.5rem;
+  background: var(--btn-bg);
+  color: #fff;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+}
+.btn:hover { background: #333; }
+
+/* Bloques numerados */
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.item .num {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #aaa;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .content-side {
+    padding: 2.5rem 1.5rem;
+    max-width: none;
+  }
+}
