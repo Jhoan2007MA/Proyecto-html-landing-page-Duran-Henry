@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #fff;
+  color: #1a1a1a;
+  padding: 4rem 5%;
+}
+
+/* Grid layout general */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 0.5fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Columna izquierda */
+.text-column .tagline {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.text-column h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.text-column .description {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  max-width: 400px;
+}
+
+.btn {
+  background-color: #2e2e2e;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-bottom: 3rem;
+}
+
+.btn:hover {
+  background-color: black;
+}
+
+/* Estadísticas */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.stat {
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 4px 4px 0px #00000030;
+  min-width: 150px;
+  flex: 1;
+}
+
+.stat h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.light-blue {
+  background-color: #d8ecf8;
+}
+
+.orange {
+  background-color: #fcd9a5;
+}
+
+.pink {
+  background-color: #f2c5c5;
+}
+
+/* Imagen central */
+.image-wrapper {
+  position: relative;
+  border-radius: 50% 50% 0 0 / 60% 60% 0 0;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  padding-bottom: 120%;
+  position: relative;
+}
+
+.image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Burbujas de comentarios */
+.bubble {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-r
+}

@@ -1,0 +1,122 @@
+/* ---------- Base ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --container: 1200px;
+  --gap: 22px;
+  --radius: 16px;
+  --row: 210px;        /* alto base de fila */
+}
+body{
+  font-family: system-ui, Arial, Helvetica, sans-serif;
+  color:#222;
+  background: linear-gradient(#d8e9f5, #f7c780);
+  min-height: 100vh;
+  display: flex; justify-content: center;
+  padding: 36px 18px 60px;
+}
+.wrap{ width: min(100%, var(--container)); }
+
+/* ---------- Hero copy ---------- */
+.hero-copy{
+  text-align: center;
+  margin-bottom: 28px;
+}
+.hero-copy h1{
+  font-size: clamp(28px, 4.2vw, 48px);
+  line-height: 1.2;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+.hero-copy p{
+  max-width: 760px;
+  margin: 0 auto 18px;
+  color:#444;
+}
+.btn{
+  display: inline-block;
+  background:#1d1c1a;
+  color:#fff;
+  padding: 12px 26px;
+  border-radius: 28px;
+  text-decoration: none;
+}
+
+/* ---------- Mosaic grid ---------- */
+.mosaic{
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(5, 1fr); /* ¡5 columnas como en el diseño! */
+  grid-auto-rows: var(--row);
+}
+
+/* Carta base */
+.tile{
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 24px rgba(0,0,0,.08);
+  isolation: isolate; /* para overlays */
+}
+.tile img{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Caption para cuadros pequeños */
+.caption{
+  position: absolute; left: 12px; right: 12px; bottom: 12px;
+  text-align: center;
+  font-size: 14px; line-height: 1.3;
+  color:#111;
+  background: rgba(255,255,255,.7);
+  border-radius: 12px;
+  padding: 10px 12px;
+  backdrop-filter: blur(2px);
+}
+
+/* Badges "Title 1/2" */
+.badge{
+  position: absolute;
+  background: rgba(255,255,255,.75);
+  border-radius: 10px;
+  font-weight: 700;
+  padding: 8px 12px;
+}
+.badge.top-right{ top: 14px; right: 14px; }
+.badge.top-left{ top: 14px; left: 14px; }
+
+
+
+.t1{ grid-column: 1; grid-row: 1; }                 
+.t2{ grid-column: 2; grid-row: 1; }                
+.t3{ grid-column: 3 / span 2; grid-row: 1 / span 2;}
+.t4{ grid-column: 5; grid-row: 1; }                 
+/* fila 2 */
+.t6{ grid-column: 1 / span 2; grid-row: 2; }        
+.t5{ grid-column: 5; grid-row: 2; }                
+
+/* Tamaños semánticos (por si los reutilizas) */
+.tile-2x2{ grid-column: span 2; grid-row: span 2; }
+.tile-wide{ grid-column: span 2; grid-row: span 1; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px){
+  :root{ --row: 190px; }
+}
+@media (max-width: 900px){
+  .mosaic{ grid-template-columns: repeat(3, 1fr); }
+
+  .t1{ grid-column: 1; grid-row: auto; }
+  .t2{ grid-column: 2; }
+  .t3{ grid-column: 1 / span 3; grid-row: span 2; }
+  .t4{ grid-column: 1; }
+  .t6{ grid-column: 2 / span 2; }
+  .t5{ grid-column: 3; }
+}
+@media (max-width: 600px){
+  .mosaic{ grid-template-columns: 1fr; grid-auto-rows: 200px; }
+  .tile, .tile-2x2, .tile-wide{ grid-column: auto; grid-row: auto; }
+  .t3{ grid-row: span 1; }
+}

@@ -1,0 +1,122 @@
+/* ---------- Reset ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+:root{
+  --card-bg: rgba(255,255,255,0.65);
+  --card-border: rgba(0,0,0,0.18);
+  --text: #0d0d0d;
+}
+
+/* ---------- Fondo ---------- */
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+  color: var(--text);
+  min-height: 100svh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Gradiente de respaldo por si la imagen no carga */
+.bg{
+  position: fixed; inset: 0; z-index: -2;
+  background: linear-gradient(180deg,#eaf0ef 0%, #ffd2ae 55%, #f2a062 100%);
+}
+
+/* Imagen de fondo (la flor en esquina inferior derecha) */
+.bg-photo{
+  position: fixed; inset: 0; z-index: -1;
+  width: 100%; height: 100%;
+  object-fit: cover;            /* rellena como en el mockup */
+  pointer-events: none;
+}
+
+/* ---------- Layout principal ---------- */
+.container{
+  width: min(1200px, 92%);
+  margin-inline: auto;
+  padding-block: min(10vh, 100px);
+}
+
+.hero{
+  display: grid;                /* GRID PRINCIPAL */
+  grid-template-columns: 520px 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+/* ---------- Tarjeta izquierda ---------- */
+.card{
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: clamp(1.2rem, 2.5vw, 1.6rem);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 1px 0 rgba(0,0,0,.05), 0 25px 60px rgba(0,0,0,.08);
+  display: flex;                /* FLEX interno */
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* Sello circular superpuesto */
+.badge{
+  position: absolute;
+  top: -34px; left: 22px;
+  width: 86px; height: 86px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  background: #fff;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  overflow: hidden;
+}
+.badge img{ width: 100%; height: 100%; object-fit: cover; }
+
+.card-text{
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+/* GRID de estadísticas (2 x 2) */
+.stats{
+  display: grid;                /* GRID SECUNDARIO */
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 1.4rem 3rem;
+}
+.stat{ display: flex; flex-direction: column; gap: .35rem; } /* FLEX */
+.stat h3{ font-size: 1.6rem; font-weight: 800; }
+.stat p{ font-size: .95rem; color: rgba(0,0,0,.72); }
+
+/* ---------- Columna derecha ---------- */
+.content{ max-width: 640px; }
+.title{
+  font-size: clamp(2rem, 3.8vw + .5rem, 3.25rem);
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.lead{
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin-bottom: 1.4rem;
+  color: rgba(0,0,0,.86);
+}
+.btn{
+  display: inline-flex; align-items: center; justify-content: center; /* FLEX botón */
+  padding: .9rem 1.6rem;
+  border-radius: 28px;
+  border: 0;
+  background: #0a0a0a; color: #fff; font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(0,0,0,.15);
+  transition: transform .06s ease, filter .2s ease;
+}
+.btn:active{ transform: translateY(1px); }
+.btn:hover{ filter: brightness(1.03); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px){
+  .hero{ grid-template-columns: 1fr; }
+  .content{ max-width: 720px; }
+  .badge{ left: 16px; }
+}

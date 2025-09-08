@@ -1,0 +1,120 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fdfdfd;
+  color: #111;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #FFD93B; /* Amarillo base */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  z-index: 2;
+  max-width: 1200px;
+  width: 90%;
+  align-items: center;
+}
+
+/* Texto izquierdo */
+.text-left h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.highlight {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border: 2px solid #111;
+  border-radius: 2rem;
+  font-style: italic;
+}
+
+.btn {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Texto derecho */
+.text-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.feature h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #111;
+}
+
+.feature p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Estadísticas */
+.stats {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  border: 2px solid #111;
+  border-radius: 2rem;
+  padding: 0.8rem 2rem;
+  font-weight: bold;
+}
+
+.stat {
+  font-size: 1.2rem;
+}
+
+/* Fondo con imagen */
+.hero-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.hero-bg img {
+  width: 100%;
+  object-fit: cover;
+}
